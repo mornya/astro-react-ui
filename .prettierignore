@@ -1,9 +1,10 @@
-# Ignoring git directories and files
-# For more informations: https://help.github.com/articles/ignoring-files
+# Ignoring prettier directories and files
 
 # Deserved directories and files only
 /.cache
 /.coverage
+/.git
+/.husky
 /.idea
 /.next
 /.pnp
@@ -18,6 +19,8 @@
 /dist
 /node_modules
 /out
+/public
+/static
 /temp
 /temporary
 /tmp
@@ -44,16 +47,7 @@ yarn-error.log*
 *.pfx
 *.csr
 
-# Sentry
-.sentryclirc
-.env.sentry-build-plugin
-
 # Current application only
 /.astro
-/public/robots.txt
-/public/sitemap*
-/public/sw.js*
-/public/workbox-*
-/public/worker-*
-/public/fallback-*
-*.tgz
+/.env.*
+/*.tgz
