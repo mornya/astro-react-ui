@@ -8,9 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "vitest ### DEBUG=vite-tsconfig-paths vitest",
-    "test:run": "vitest run --reporter=verbose",
-    "test:ui": "vitest run --ui"
+    "test": "vitest run --reporter=verbose ### DEBUG=vite-tsconfig-paths vitest run --reporter=verbose",
+    "test:watch": "vitest --reporter=verbose"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",
@@ -23,10 +22,15 @@
     "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/node": "^24.0.3",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@vitejs/plugin-react": "^4.5.2",
+    "@vitejs/plugin-react-swc": "^3.10.2",
+    "jsdom": "^26.1.0",
     "prettier": "3.5.3",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.13",

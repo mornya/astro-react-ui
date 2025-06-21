@@ -1,5 +1,5 @@
 /// <reference types="vitest" />
-import viteReactPlugin from '@vitejs/plugin-react';
+import viteReactPlugin from '@vitejs/plugin-react-swc';
 import { getViteConfig } from 'astro/config';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
 
@@ -11,11 +11,12 @@ export default getViteConfig({
 
   test: {
     globals: false, // 전역 변수 사용하지 않도록 함
+    environment: 'jsdom', // JSDOM 환경에서 테스트 실행
     setupFiles: './test/@setup.ts',
     include: ['./test/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
     alias: {
       '~/': currentDir,
-      '@/': `${currentDir}/src`,
+      '@/': `${currentDir}src/`,
     },
     coverage: {
       provider: 'v8',
@@ -23,5 +24,6 @@ export default getViteConfig({
       include: ['src/**/*.{ts,tsx}'],
       exclude: ['test/**/*', '**/*.d.ts'],
     },
+    passWithNoTests: true,
   },
 });
