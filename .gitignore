@@ -50,10 +50,4 @@ yarn-error.log*
 
 # Current application only
 /.astro
-/public/robots.txt
-/public/sitemap*
-/public/sw.js*
-/public/workbox-*
-/public/worker-*
-/public/fallback-*
 *.tgz

@@ -2,12 +2,33 @@
   "name": "astro-react-ui",
   "version": "0.0.1",
   "description": "The UI project based on Astro and React.",
+  "keywords": [
+    "astro",
+    "react",
+    "ui",
+    "front-end"
+  ],
+  "homepage": "https://github.com/mornya/astro-react-ui",
+  "bugs": "https://github.com/mornya/astro-react-ui/issues",
+  "license": "MIT",
+  "author": "mornya <mornya78@gmail.com>",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mornya/astro-react-ui.git"
+  },
   "type": "module",
+  "types": "./types",
+  "engines": {
+    "node": ">=18.18 || >=20.11",
+    "npm": ">=9"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "format": "prettier --write --ignore-path .prettierignore ./src ./test ./types",
     "test": "vitest run --reporter=verbose ### DEBUG=vite-tsconfig-paths vitest run --reporter=verbose",
     "test:watch": "vitest --reporter=verbose"
   },
@@ -36,5 +57,17 @@
     "prettier-plugin-tailwindcss": "^0.6.13",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
