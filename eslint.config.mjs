@@ -1,7 +1,6 @@
-import eslintJs from '@eslint/js';
-// Import plugins
+import jsEslint from '@eslint/js';
 import tsEslint from 'typescript-eslint';
-import { defineConfig } from 'eslint/config';
+// Import plugins
 import astroEslintPlugin from 'eslint-plugin-astro';
 import importEslintPlugin from 'eslint-plugin-import';
 import jsxA11yEslintPlugin from 'eslint-plugin-jsx-a11y';
@@ -11,10 +10,11 @@ import reactHooksEslintPlugin from 'eslint-plugin-react-hooks';
 import simpleImportSortEslintPlugin from 'eslint-plugin-simple-import-sort';
 import unicornEslintPlugin from 'eslint-plugin-unicorn';
 
-const eslintConfig = defineConfig([
+/** @type {import('typescript-eslint').InfiniteDepthConfigWithExtends} */
+const eslintConfig = tsEslint.config(
   // Base configuration
-  eslintJs.configs.recommended,
-  tsEslint.configs.recommended,
+  jsEslint.configs.recommended,
+  ...tsEslint.configs.recommended,
   {
     languageOptions: {
       parser: tsEslint.parser,
@@ -29,9 +29,6 @@ const eslintConfig = defineConfig([
     },
   },
   {
-    ignores: ['.astro', 'build', 'coverage', 'dist', 'node_modules', 'public', 'src/assets', '*.config.*'],
-  },
-  {
     plugins: {
       import: importEslintPlugin,
       'jsx-a11y': jsxA11yEslintPlugin,
@@ -40,6 +37,9 @@ const eslintConfig = defineConfig([
       'simple-import-sort': simpleImportSortEslintPlugin,
       unicorn: unicornEslintPlugin,
     },
+  },
+  {
+    ignores: ['.astro', 'build', 'coverage', 'dist', 'node_modules', 'public', 'src/assets', '*.config.*'],
   },
   {
     rules: {
@@ -76,6 +76,6 @@ const eslintConfig = defineConfig([
       // "astro/no-set-html-directive": "error"
     },
   },
-]);
+);
 
 export default eslintConfig;
