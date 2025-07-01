@@ -31,7 +31,8 @@
     "format": "prettier --write --ignore-path .prettierignore ./src ./test ./types",
     "lint": "eslint",
     "test": "vitest run --reporter=verbose ### DEBUG=vite-tsconfig-paths vitest run --reporter=verbose",
-    "test:watch": "vitest --reporter=verbose"
+    "test:watch": "vitest --reporter=verbose",
+    "sonar": "sonar-scanner"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",
@@ -50,10 +51,10 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
-    "@types/node": "^24.0.3",
+    "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/eslint-plugin": "8.34.1",
     "@vitejs/plugin-react-swc": "^3.10.2",
     "eslint": "^9",
     "eslint-config-prettier": "^10.1.5",
@@ -66,10 +67,10 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-unicorn": "^59.0.1",
     "jsdom": "^26.1.0",
-    "prettier": "3.5.3",
-    "prettier-plugin-astro": "0.14.1",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.13",
-    "typescript-eslint": "^8.34.1",
+    "typescript-eslint": "^8.35.1",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
   },
